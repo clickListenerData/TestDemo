@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Motion Layout 动画-->
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto"
+    motion:defaultDuration="300">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="3000"
+        >
+       <KeyFrameSet>
+           <KeyPosition>
+
+           </KeyPosition>
+           <KeyAttribute>
+
+           </KeyAttribute>
+       </KeyFrameSet>
+        <OnSwipe />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/v_t"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:rotationX="-105"
+            android:rotationY="-28" />
+
+        <Constraint
+            android:id="@+id/tv_hw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="50"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"/>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/v_t"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"/>
+        <Constraint
+            android:id="@id/tv_hw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="100"
+            android:scaleX="2.0"
+            android:scaleY="2.0"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"/>
+    </ConstraintSet>
+    <Transition
+        motion:constraintSetStart="@+id/start"
+        motion:constraintSetEnd="@+id/end" />
+</MotionScene>
